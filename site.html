@@ -1,0 +1,100 @@
+<<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pegadinha - A Cibelly é fiel?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .pergunta {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #f7f7f7;
+        }
+
+        #nao-btn {
+            background-color: #ff4d4d;
+            color: white;
+        }
+
+        #nao-btn:hover {
+            background-color: #ff1a1a;
+        }
+
+        #sim-btn {
+            background-color: #4CAF50;
+            color: white;
+            pointer-events: none;
+        }
+
+        .mensagem {
+            display: none;
+            font-size: 20px;
+            margin-top: 20px;
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="pergunta">A Cibelly é fiel?</div>
+    <div class="buttons">
+        <button id="sim-btn" class="btn">Sim</button>
+        <button id="nao-btn" class="btn">Não</button>
+    </div>
+    <div class="mensagem" id="mensagem">A Cibelly não é fiel, ela trai.</div>
+</div>
+
+<script>
+    // Impede o mouse de alcançar o botão "Sim"
+    document.getElementById('sim-btn').addEventListener('mouseover', function() {
+        this.style.position = 'absolute';
+        this.style.top = Math.random() * window.innerHeight + 'px';
+        this.style.left = Math.random() * window.innerWidth + 'px';
+    });
+
+    // Exibe a mensagem quando o botão "Não" for clicado
+    document.getElementById('nao-btn').addEventListener('click', function() {
+        document.getElementById('mensagem').style.display = 'block';
+    });
+</script>
+
+</body>
+</html>
